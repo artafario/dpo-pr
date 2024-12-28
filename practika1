@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Random random = new Random();
+
+        // Случайный массив целых чисел
+        int[] intArray = new int[10];
+        for (int i = 0; i < intArray.Length; i++)
+        {
+            intArray[i] = random.Next(1, 100);
+        }
+
+        // Массив double
+        double[] doubleArray = new double[10];
+        doubleArray[0] = 1;
+        for (int i = 1; i < doubleArray.Length; i++)
+        {
+            doubleArray[i] = doubleArray[i - 1] * 2;
+        }
+
+        // Массив символов
+        char[] charArray = { 'a', 'b', 'c', 'd', 'e' };
+
+        // Добавление количества символов к каждому элементу массива целых чисел
+        int charCount = charArray.Length;
+        for (int i = 0; i < intArray.Length; i++)
+        {
+            intArray[i] += charCount;
+        }
+
+        // Вывод массивов
+        Console.WriteLine("Массив целых чисел:");
+        Console.WriteLine(string.Join(", ", intArray));
+
+        Console.WriteLine("Массив double:");
+        Console.WriteLine(string.Join(", ", doubleArray));
+
+        Console.WriteLine("Массив символов:");
+        Console.WriteLine(string.Join(", ", charArray));
+    }
+}
